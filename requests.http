@@ -16,8 +16,8 @@ POST http://127.0.0.1:8000/sales/
 Content-Type: application/json
 
 {
-  "item_id": 1,
-  "store_id": 1
+  "item_id": 3,
+  "store_id": 3
 }
 
 ###

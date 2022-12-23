@@ -3,11 +3,11 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.ext.asyncio import create_async_engine
 from sqlalchemy.orm import sessionmaker
 
+# Параметры работы с БД, создание и очистка таблиц в БД, выдача сессий
 DB_USER = "postgres"
 DB_NAME = "shop"
 DB_PASSWORD = "admin"
 DB_HOST = "127.0.0.1"
-
 DATABASE_URL = f"postgresql+asyncpg://{DB_USER}:{DB_PASSWORD}@{DB_HOST}:5432/{DB_NAME}"
 
 engine = create_async_engine(DATABASE_URL, echo=True)

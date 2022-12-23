@@ -3,8 +3,8 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from models import *
 
 
+# Функции для работы с данными в БД
 async def get_stores(session: AsyncSession) -> list[Store]:
-    # result = await session.execute(select(Store).order_by(Store.population.desc()).limit(20))
     result = await session.execute(select(Store))
     return result.scalars().all()
 

@@ -6,10 +6,10 @@ from pydantic import BaseModel, validator
 from base import init_models
 from base import get_session
 import service
-import add_date_to_db
+import add_data_to_db
 import uvicorn as uvicorn
 
-
+# Основной модуль с логикой
 app = FastAPI()
 
 
@@ -64,7 +64,7 @@ async def startup():
     # Drop and crate all tables in db
     await init_models()
     # add new data to db
-    add_date_to_db.add_date()
+    add_data_to_db.add_data()
     print("Done")
 
 

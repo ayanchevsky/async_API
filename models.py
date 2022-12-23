@@ -5,6 +5,7 @@ from sqlalchemy import Integer, Float, DateTime
 from base import Base
 
 
+# Описание моделей БД
 class Item(Base):
     __tablename__ = "item"
     id = Column(Integer, autoincrement=True, primary_key=True)
