@@ -20,11 +20,85 @@
   ## Решение
   - реализовано асинхронное веб приложение которое:
     - обрабатывает GET-запрос на получение всех товарных позиций /items/
+    ```
+    HTTP/1.1 200 OK
+    date: Fri, 23 Dec 2022 10:07:21 GMT
+    server: uvicorn
+    content-length: 191
+    content-type: application/json
+      {
+        "id": 1,
+        "name": "Iphone 14",
+        "price": 111111.11
+      }
+    ```
     - обрабатывает GET-запрос на получение всех магазинов /stores/
+    ```
+    HTTP/1.1 200 OK
+    date: Fri, 23 Dec 2022 10:05:30 GMT
+    server: uvicorn
+    content-length: 194
+    content-type: application/json
+      {
+        "id": 1,
+        "address": "ул. Мира д. 150"
+      }
+    ```
     - обрабатывает GET-запрос на получение всех продаж /sales/
+    ```
+    HTTP/1.1 200 OK
+    date: Fri, 23 Dec 2022 10:09:00 GMT
+    server: uvicorn
+    content-length: 676
+    content-type: application/json
+      {
+        "id": 1,
+        "sale_time": "2022-12-23T14:05:45.006951",
+        "item_id": 1,
+        "store_id": 1
+      }
+    ```
     - обрабатывает POST-запрос с json-телом для сохранения данных о произведенной продаже (id товара + id магазина) /sales/
+    ```
+    HTTP/1.1 200 OK
+    date: Fri, 23 Dec 2022 10:06:09 GMT
+    server: uvicorn
+    content-length: 74
+    content-type: application/json
+    {
+      "item_id": 3,
+      "store_id": 2,
+      "id": 9,
+      "sale_time": "2022-12-23T14:06:09.925000"
+    }
+    ```
     - обрабатывает GET-запрос на получение данных по топ 10 самых доходных магазинов за месяц (id + адрес + суммарная выручка) /items/top/
+    ```
+    HTTP/1.1 200 OK
+    date: Fri, 23 Dec 2022 10:26:30 GMT
+    server: uvicorn
+    content-length: 122
+    content-type: application/json
+      {
+        "id": 1,
+        "address": "ул. Мира д. 150",
+        "income": 655555.53
+      }
+    ```
     - обрабатывает GET-запрос на получение данных по топ 10 самых продаваемых товаров (id + наименование + количество проданных товаров) /stores/top/
+    ```
+    HTTP/1.1 200 OK
+    date: Fri, 23 Dec 2022 10:25:05 GMT
+    server: uvicorn
+    content-length: 136
+    content-type: application/json
+      {
+        "id": 1,
+        "name": "Iphone 14",
+        "sales_amount": 5
+      }
+    ```
+    
   ## Дополнительно
   Зависимости в файле **requirements.txt**, примеры HTTP запросов в файле **requests.http**.
 

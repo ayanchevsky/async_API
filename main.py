@@ -23,7 +23,7 @@ class StoreIn(BaseModel):
 class StoreTop(BaseModel):
     id: int
     address: str
-    income: int
+    income: float
 
 class Item(BaseModel):
     id: int
@@ -96,13 +96,13 @@ async def add_city(sale: SaleIn, session: AsyncSession = Depends(get_session)):
 @app.get("/items/top/", response_model=list[ItemTop])
 async def get_sales_top(session: AsyncSession = Depends(get_session)):
     top_items = await service.get_top_items(session)
-    return [ItemTop(id=c[0], name=c[1], sales_amount=c[2]) for c in top_items]
+    return [ItemTop(id=c[0], name=c[2], sales_amount=c[1]) for c in top_items]
 
 
 @app.get("/stores/top/", response_model=list[StoreTop])
 async def get_stores_top(session: AsyncSession = Depends(get_session)):
     top_stores = await service.get_top_stores(session)
-    return [StoreTop(id=c[0], address=c[2], income=c[1]) for c in top_stores]
+    return [StoreTop(id=c[0], address=c[1], income=c[2]) for c in top_stores]
 
 
 if __name__ == "__main__":
