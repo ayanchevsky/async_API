@@ -1,0 +1,43 @@
+# примеры API-запросов
+
+GET http://127.0.0.1:8000/stores/
+
+###
+
+GET http://127.0.0.1:8000/items/
+
+###
+
+GET http://127.0.0.1:8000/sales/
+
+###
+
+POST http://127.0.0.1:8000/sales/
+Content-Type: application/json
+
+{
+  "item_id": 3,
+  "store_id": 1
+}
+
+###
+POST http://127.0.0.1:8000/sales/
+Content-Type: application/json
+
+{
+  "id": 1,
+  "sale_time": "2022-12-31 00:00:00",
+  "item_id": 1,
+  "store_id": "a"
+}
+
+###
+GET http://127.0.0.1:8000/items/top/
+
+###
+
+GET http://127.0.0.1:8000/stores/top/
+
+###
+
+
