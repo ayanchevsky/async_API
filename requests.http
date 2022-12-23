@@ -11,16 +11,17 @@ GET http://127.0.0.1:8000/items/
 GET http://127.0.0.1:8000/sales/
 
 ###
-
+# Правельный POST запрос
 POST http://127.0.0.1:8000/sales/
 Content-Type: application/json
 
 {
-  "item_id": 3,
+  "item_id": 1,
   "store_id": 1
 }
 
 ###
+# Не правельный POST запрос
 POST http://127.0.0.1:8000/sales/
 Content-Type: application/json
 
