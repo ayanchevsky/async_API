@@ -23,7 +23,7 @@ class StoreIn(BaseModel):
 class StoreTop(BaseModel):
     id: int
     address: str
-    income: float
+    income: int                                             # Float ?
 
 class Item(BaseModel):
     id: int
